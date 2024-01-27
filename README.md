@@ -1,0 +1,1 @@
+My hopes are to pass this class with a good grade. I hope the curiculum isn't too challenging on me and will be fun and enjoyable to go through. I hope I learn a lot from this course and maybe make connections with the people around me and get to know the professor more.
