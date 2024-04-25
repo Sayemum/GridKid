@@ -1,0 +1,47 @@
+program = block ;
+block = statement { statement } ;
+statement = var_assign | if_statement | for_each_loop | expression ;
+
+if_statement = "if (" expression ") {" block "} else {" block "}" ;
+for_each_loop = "for" identifier "in" cell_range "{" block "}" ;
+cell_range = cell_address ".." cell_address ;
+
+var_assign = "let" identifier "=" expression ;
+identifier = letter { letter | digit } ;
+
+
+expression = logical_expr ;
+
+logical_expr = bitwise_expr { ("&&" | "||") bitwise_expr } ;
+
+bitwise_expr = equality_expr { ("&" | "|" | "^" | "<<" | ">>") equality_expr } ;
+
+equality_expr = relational_expr { ("==" | "!=") relational_expr } ;
+
+relational_expr = add_expr { ("<" | "<=" | ">" | ">=") add_expr } ;
+
+add_expr = mul_expr { ("+" | "-") mul_expr } ;
+
+mul_expr = unary_expr { ("*" | "/" | "%") unary_expr } ;
+
+unary_expr = ["-" | "!" | "~" | "f_to_i" | "i_to_f"] unary_expr
+            | power ;
+
+power = primary { "**" primary } ;
+
+primary = integer | float | boolean | string | cell_address | "(" expression ")" | cell_value | function_call ;
+
+
+cell_value = ["#"] cell_address ;
+function_call = function_name "([" expression "," expression "],[" expression "," expression "])" ;
+function_name = "max" | "min" | "mean" | "sum" ;
+
+integer = digit { digit } ;
+float = digit { digit } "." { digit } ;
+boolean = "true" | "false" ;
+string = '"' { all_chars - '"' } '"' ;
+cell_address = "[" expression { "," expression } "]" ;
+
+digit = "0".."9" ;
+letter = "A".."Z" | "a".."z" ;
+all_chars = "\u0000" .. "\uFFFF" ;
