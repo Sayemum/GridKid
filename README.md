@@ -7,7 +7,7 @@ This interface displays the grid and uses an interpreter to lex, parse, and exec
 
 ![image](https://github.com/user-attachments/assets/1a36ea73-99a5-4aba-8ed3-440fbba8c380)
 
-The snippet above shows the default spreadsheet when you run `ruby main.rb` in the terminal. You can freely navigate around the grid using your arrow keys and each cell shows two pieces of information: the formula for that cell and what's being displayed.
+The snippet above shows the default spreadsheet when you run `ruby main.rb` (in the m3-interface folder) in the terminal. You can freely navigate around the grid using your arrow keys and each cell shows two pieces of information: the formula for that cell and what's being displayed.
 
 
 ![image](https://github.com/user-attachments/assets/87e070dd-671c-44ad-8825-1dbf5f339e6c)
